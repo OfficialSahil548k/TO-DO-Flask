@@ -1,0 +1,225 @@
+/* General Body Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Main To-Do Container */
+.todo-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    /* Enhanced, softer shadow */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.02), 0 12px 40px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* Form for Adding Tasks */
+.add-task-form {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.add-task-form input[type="text"] {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.add-task-form input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.add-task-form button {
+    padding: 0.75rem 1.5rem;
+    /* Gradient background for a modern look */
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-task-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Task List Styling */
+.task-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    border-left: 4px solid #dfe6e9;
+    transition: all 0.3s ease;
+}
+
+.task-list li:hover {
+    /* More pronounced hover effect */
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+}
+
+.task-text {
+    flex-grow: 1;
+    margin-right: 1rem;
+}
+
+/* Completed Task Styling */
+.task-list li.completed {
+    background-color: #f1f8e9;
+    color: #95a5a6;
+    border-left: 4px solid #8bc34a;
+}
+
+.task-list li.completed .task-text {
+    text-decoration: line-through;
+}
+
+/* Task Action Buttons */
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+.complete-btn {
+    background-color: #27ae60;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+/* Empty State for when there are no tasks */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #fdfdfd;
+    border: 2px dashed #eee;
+    border-radius: 8px;
+    color: #bdc3c7;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* All Tasks Completed Message */
+.all-done-message {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    background-color: #e0f2f1; /* Light teal */
+    border: 2px solid #4db6ac; /* Teal border */
+    border-radius: 12px;
+    color: #00695c; /* Dark teal text */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.all-done-message i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00897b;
+}
+
+.all-done-message h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.all-done-message p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+    .todo-container {
+        padding: 1.5rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    .add-task-form {
+        flex-direction: column;
+    }
+}
